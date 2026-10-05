@@ -1,0 +1,7 @@
+# Git'in TAKİP ETMEYECEĞİ klasörler (8. aşamada anlamı netleşecek)
+
+# İndirilen araçlar: herkes "npm install" ile kendisi indirebilir, saklamaya gerek yok
+node_modules
+
+# Build çıktısı: kaynak koddan her zaman yeniden üretilebilir
+dist

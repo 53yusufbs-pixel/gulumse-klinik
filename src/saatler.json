@@ -1,0 +1,5 @@
+[
+  { "etiket": "Pazartesi – Cuma", "gunler": [1, 2, 3, 4, 5], "acilis": 9,  "kapanis": 18 },
+  { "etiket": "Cumartesi",        "gunler": [6],             "acilis": 10, "kapanis": 14 },
+  { "etiket": "Pazar",            "gunler": [0],             "acilis": 10, "kapanis": 24 }
+]

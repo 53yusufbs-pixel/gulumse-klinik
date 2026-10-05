@@ -1,0 +1,114 @@
+/* CSS'in mantığı:  HANGİ ÖĞE { hangi özellik: hangi değer; }  */
+
+/* Tüm sayfa: yazı tipi, arka plan, yazı rengi */
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4fbf4;   /* çok açık mavi arka plan */
+  color: #333;                 /* koyu gri yazı (tam siyah değil, göz yormasın) */
+  margin: 0;                   /* tarayıcının kenarlara koyduğu boşluğu sıfırla */
+  line-height: 1.6;            /* satır aralığı */
+}
+
+/* Üst kısım: renkli bant */
+header {
+  background-color: #a55709;   /* deniz mavisi */
+  color: rgb(39, 8, 8);
+  text-align: center;          /* yazıları ortala */
+  padding: 40px 20px;          /* iç boşluk: üst-alt 40px, sağ-sol 20px */
+}
+
+/* Ana başlık (h1): tarayıcı varsayılanını burada değiştiriyoruz */
+h1 {
+  margin: 0;
+  font-size: 2.5rem;
+}
+
+/* Orta başlıklar (h2) */
+h2 {
+  color: #b8ae27;
+  text-align: center;
+}
+
+/* İçerik alanı: çok geniş ekranda bile ortada, en fazla 1000px */
+main {
+  max-width: 1000px;
+  margin: 0 auto;              /* "auto" = sağ ve sol boşluğu eşit dağıt → ortala */
+  padding: 20px;
+}
+
+/* Nokta (.) ile başlayan isim = HTML'deki class="kartlar" */
+.kartlar {
+  display: flex;               /* içindeki kartları YAN YANA diz */
+  gap: 20px;                   /* kartlar arası boşluk */
+  flex-wrap: wrap;             /* sığmazsa (telefonda) alt satıra geçsin */
+}
+
+/* Her bir kart: beyaz kutu, yuvarlak köşe, hafif gölge */
+.kart {
+  flex: 1;                     /* üç kart eşit genişlikte olsun */
+  min-width: 220px;            /* bundan daha dar olmasın, yoksa alt satıra geçsin */
+  background-color: rgb(228, 167, 167);
+  border-radius: 12px;         /* köşeleri yuvarla */
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);   /* hafif gölge */
+}
+
+/* Kart başlıkları */
+.kart h3 {
+  margin-top: 0;
+  color: #1e88a8;
+}
+
+/* Alt kısım: koyu bant */
+footer {
+  background-color: #263238;
+  color: #ddd;
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+}
+
+/* Alt kısımdaki başlık beyaz olsun (yukarıdaki h2 kuralını burada eziyoruz) */
+footer h2 {
+  color: white;
+}
+
+/* Alt kısımdaki bağlantılar */
+footer a {
+  color: #80deea;
+}
+
+/* ===== 3. AŞAMA EKLERİ ===== */
+
+/* Çalışma saatleri bölümünü ortala */
+.saatler-bolumu {
+  text-align: center;
+  margin-top: 30px;
+}
+
+/* Buton görünümü */
+#saat-butonu {
+  background-color: #1e88a8;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;             /* üzerine gelince el işareti çıksın */
+}
+
+/* Fare butonun üzerindeyken biraz koyulaşsın */
+#saat-butonu:hover {
+  background-color: #156a83;
+}
+
+/* Saat listesi: madde işaretsiz */
+#saat-listesi {
+  list-style: none;
+  padding: 0;
+}
+
+/* JavaScript'in ekleyip kaldırdığı class: varsa öğe görünmez */
+.gizli {
+  display: none;
+}

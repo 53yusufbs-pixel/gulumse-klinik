@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gülümse Diş Kliniği</title>
+  <!-- Google arama sonuçlarında başlığın altında görünen açıklama -->
+  <meta name="description" content="Gülümse Diş Kliniği: diş beyazlatma, implant ve kanal tedavisi.">
+
+  <!-- KAYNAK KODDA: CSS dosyası src klasöründe, okunaklı hâliyle.
+       BUILD SONRASI: Vite bunu sıkıştırıp adı değişmiş bir dosyaya çevirecek. -->
+  <link rel="stylesheet" href="/src/style.css">
+</head>
+<body>
+
+  <header>
+    <h1>Gülümse Diş Kliniği</h1>
+    <p>Dt. Ayşe Yılmaz</p>
+    <p id="durum"></p>
+  </header>
+
+  <main>
+
+    <section>
+      <h2>Hakkımızda</h2>
+      <p>2010'dan beri ailenizin ağız ve diş sağlığı için yanınızdayız.
+         Modern cihazlarla, ağrısız ve güler yüzlü tedavi sunuyoruz.</p>
+    </section>
+
+    <section>
+      <h2>Tedavilerimiz</h2>
+      <div class="kartlar">
+        <article class="kart">
+          <h3>Diş Beyazlatma</h3>
+          <p>Tek seansta birkaç ton daha beyaz dişler.</p>
+        </article>
+        <article class="kart">
+          <h3>İmplant</h3>
+          <p>Eksik dişler için kalıcı ve doğal görünümlü çözüm.</p>
+        </article>
+        <article class="kart">
+          <h3>Kanal Tedavisi</h3>
+          <p>Dişinizi çekmeden kurtaran, ağrısız tedavi.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="saatler-bolumu">
+      <button id="saat-butonu">Çalışma saatlerini göster</button>
+      <ul id="saat-listesi" class="gizli"></ul>
+    </section>
+
+  </main>
+
+  <footer>
+    <h2>İletişim</h2>
+    <p>Adres: Örnek Mah. Gülüş Sok. No:5, İstanbul</p>
+    <p>Telefon: <a href="tel:+902120000000">0212 000 00 00</a></p>
+    <p>E-posta: <a href="mailto:info@ornek.com">info@ornek.com</a></p>
+  </footer>
+
+  <!-- type="module": "bu dosya başka dosyaları içe aktarabilir (import)" demek.
+       KAYNAK KODDA 3 ayrı dosya (main.js, saatler.js, saatler.json);
+       BUILD SONRASI hepsi TEK bir dosyada birleşecek. -->
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>

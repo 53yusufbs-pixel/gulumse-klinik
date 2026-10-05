@@ -1,0 +1,4 @@
+# robots.txt: Google gibi arama motoru robotlarına "nereleri tarayabilirsin" der.
+# "public" klasöründeki dosyalara Vite DOKUNMAZ; build'de olduğu gibi kopyalanır.
+User-agent: *
+Allow: /
