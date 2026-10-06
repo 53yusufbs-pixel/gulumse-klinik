@@ -113,9 +113,7 @@ footer a {
   display: none;
 }
 
-/* ===== PERFORMANS DENEYİ: galeri =====
-   Resimler ekranda ~300px genişliğinde görünüyor,
-   ama dosyaların kendisi 5000px (bilerek büyük). */
+/* ===== Galeri ===== */
 .galeri {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -123,10 +121,11 @@ footer a {
 }
 .galeri img {
   width: 100%;
+  height: auto;                /* width/height HTML'de var; burada oranı koru */
   border-radius: 8px;
 }
 
-/* Deney: dışarıdan yüklenen yazı tipi */
+/* Yazı tipi: Poppins (Google Fonts), yoksa sistemin yazı tipi */
 body {
   font-family: "Poppins", sans-serif;
 }
