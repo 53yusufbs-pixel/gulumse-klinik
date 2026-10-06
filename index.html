@@ -10,6 +10,11 @@
   <!-- KAYNAK KODDA: CSS dosyası src klasöründe, okunaklı hâliyle.
        BUILD SONRASI: Vite bunu sıkıştırıp adı değişmiş bir dosyaya çevirecek. -->
   <link rel="stylesheet" href="/src/style.css">
+
+  <!-- PERFORMANS DENEYİ (KÖTÜ): dışarıdan 6 kalınlıkta yazı tipi.
+       Tarayıcı bu dosya inmeden sayfayı çizmeye başlamaz (= oluşturma engelleme).
+       display=block: yazı tipi gelene kadar metin görünmez kalır. -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=block">
 </head>
 <body>
 
@@ -43,6 +48,20 @@
           <h3>Kanal Tedavisi</h3>
           <p>Dişinizi çekmeden kurtaran, ağrısız tedavi.</p>
         </article>
+      </div>
+    </section>
+
+    <!-- PERFORMANS DENEYİ (KÖTÜ): 4 dev fotoğraf (toplam ~13 MB).
+         - Dosyalar 5000px, ekranda ~300px görünüyor (gereksiz büyük)
+         - width/height yok (yüklenince sayfa zıplar)
+         - loading=lazy yok (ekranda görünmese de hepsi hemen iner) -->
+    <section>
+      <h2>Kliniğimizden</h2>
+      <div class="galeri">
+        <img src="/galeri/hekim.jpg" alt="Laboratuvarda çalışan diş hekimi">
+        <img src="/galeri/muayenehane.jpg" alt="Muayenehane">
+        <img src="/galeri/hasta.jpg" alt="Tedavi koltuğunda gülümseyen hasta">
+        <img src="/galeri/randevu.jpg" alt="Bilgisayardan randevu planlama">
       </div>
     </section>
 
