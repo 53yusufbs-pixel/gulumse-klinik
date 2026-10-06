@@ -3,9 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gülümse Diş Kliniği</title>
-  <!-- Google arama sonuçlarında başlığın altında görünen açıklama -->
-  <meta name="description" content="Gülümse Diş Kliniği: diş beyazlatma, implant ve kanal tedavisi.">
+
+  <!-- ===== TEKNİK SEO (Aşama 2) ===== -->
+
+  <!-- title: Google sonucundaki MAVİ başlık + tarayıcı sekmesindeki yazı (~60 karakter) -->
+  <title>Gülümse Diş Kliniği – Diş Beyazlatma, İmplant, Kanal Tedavisi (Örnek Site)</title>
+
+  <!-- description: mavi başlığın altındaki GRİ açıklama (~150 karakter). Sıralamayı değil, tıklanmayı etkiler -->
+  <meta name="description" content="Eğitim amaçlı örnek diş kliniği sitesi: diş beyazlatma, implant ve kanal tedavisi tanıtımı, çalışma saatleri ve iletişim. Gerçek bir klinik değildir.">
+
+  <!-- canonical: "bu sayfanın ASIL adresi bu". Site gulumse-klinik.vercel.app adresinden de açılıyor;
+       Google'a ikisinden hangisini sayması gerektiğini söylüyoruz -->
+  <link rel="canonical" href="https://klinik.mavr-ai.com/">
+
+  <!-- favicon: sekmede ve Google sonucunda sitenin yanında çıkan küçük simge (public/ klasöründe) -->
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+
+  <!-- Open Graph (og:): link WhatsApp/Facebook/LinkedIn'de paylaşılınca çıkan önizleme kutusu.
+       og:image TAM adres olmalı (https://... ile); önerilen boyut 1200x630 -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="tr_TR">
+  <meta property="og:site_name" content="Gülümse Diş Kliniği (Örnek Site)">
+  <meta property="og:url" content="https://klinik.mavr-ai.com/">
+  <meta property="og:title" content="Gülümse Diş Kliniği – Örnek Site">
+  <meta property="og:description" content="Diş beyazlatma, implant ve kanal tedavisi. Eğitim amaçlı örnek sitedir.">
+  <meta property="og:image" content="https://klinik.mavr-ai.com/og-gorsel.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Diş kliniği muayenehanesi">
+  <!-- X (Twitter) aynı bilgiyi okur; sadece "büyük resimli kart" istediğimizi söylüyoruz -->
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- JSON-LD (yapısal veri): Google'a makinenin anlayacağı dilde "burası bir diş kliniği" der.
+       Kalıp schema.org'dan: @type "Dentist". Ziyaretçi bunu görmez.
+       DİKKAT: saatler burada ve src/saatler.json'da İKİ KEZ yazılı → "tek kaynak" sorunu (3-js'yi hatırla).
+       Saat değişirse ikisini de değiştir. PHP sitesinde bunu veritabanından otomatik üreteceğiz. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Dentist",
+    "name": "Gülümse Diş Kliniği",
+    "description": "Eğitim amaçlı örnek sitedir, gerçek bir klinik değildir.",
+    "url": "https://klinik.mavr-ai.com/",
+    "image": "https://klinik.mavr-ai.com/og-gorsel.jpg",
+    "telephone": "+90 212 000 00 00",
+    "email": "ornek@example.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Hayali Sokak No:0",
+      "addressLocality": "İstanbul",
+      "addressCountry": "TR"
+    },
+    "openingHoursSpecification": [
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        "opens": "09:00", "closes": "18:00" },
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Saturday", "opens": "10:00", "closes": "14:00" },
+      { "@type": "OpeningHoursSpecification",
+        "dayOfWeek": "Sunday", "opens": "10:00", "closes": "23:59" }
+    ],
+    "medicalSpecialty": "Dentistry"
+  }
+  </script>
 
   <!-- KAYNAK KODDA: CSS dosyası src klasöründe, okunaklı hâliyle.
        BUILD SONRASI: Vite bunu sıkıştırıp adı değişmiş bir dosyaya çevirecek. -->
@@ -20,6 +80,12 @@
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap">
 </head>
 <body>
+
+  <!-- Bu site hayali bir klinik: Google'a açmadan önce ziyaretçiyi açıkça uyarıyoruz -->
+  <div class="uyari" role="note">
+    ⚠️ Bu site <strong>eğitim amaçlı örnek bir sitedir</strong>; gerçek bir klinik değildir.
+    Adres, telefon ve e-posta hayalidir.
+  </div>
 
   <header>
     <h1>Gülümse Diş Kliniği</h1>
@@ -77,9 +143,11 @@
 
   <footer>
     <h2>İletişim</h2>
-    <p>Adres: Örnek Mah. Gülüş Sok. No:5, İstanbul</p>
+    <!-- Hayali bilgiler: "Örnek Mahallesi" İstanbul'da gerçekten var, ornek.com da birine ait olabilir.
+         example.com ise tam bu iş için ayrılmış, kimsenin olmayan bir alan adı. -->
+    <p>Adres: Hayali Sokak No:0, İstanbul</p>
     <p>Telefon: <a href="tel:+902120000000">0212 000 00 00</a></p>
-    <p>E-posta: <a href="mailto:info@ornek.com">info@ornek.com</a></p>
+    <p>E-posta: <a href="mailto:ornek@example.com">ornek@example.com</a></p>
   </footer>
 
   <!-- type="module": "bu dosya başka dosyaları içe aktarabilir (import)" demek.

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- sitemap.xml: robotlara "bütün sayfalarım bunlar" listesi.
+     Bu site tek sayfa olduğu için tek <url> var. Her yeni sayfa için bir <url> bloğu eklenir.
+     <loc> = sayfanın TAM ve ASIL (canonical) adresi
+     <lastmod> = son önemli değişiklik tarihi (YYYY-AA-GG)
+     Statik sitede bu listeyi ELLE güncelliyoruz; PHP sitesinde veritabanından otomatik üreteceğiz. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://klinik.mavr-ai.com/</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
+</urlset>

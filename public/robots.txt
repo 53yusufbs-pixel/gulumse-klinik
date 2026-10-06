@@ -1,4 +1,12 @@
-# robots.txt: Google gibi arama motoru robotlarına "nereleri tarayabilirsin" der.
+# robots.txt: arama motoru robotlarına "nereleri tarayabilirsin" der.
+# Kurallara uyan robotlar okur; GÜVENLİK değildir (gizli şeyi şifre korur, robots.txt değil).
 # "public" klasöründeki dosyalara Vite DOKUNMAZ; build'de olduğu gibi kopyalanır.
+
+# Tüm robotlar (*) için:
 User-agent: *
+# Her yere girebilirsin
 Allow: /
+# Bu sitede admin yok; PHP sitesinde buraya "Disallow: /admin/" yazacağız
+
+# Sayfa listemin (site haritası) yeri — TAM adres olmalı
+Sitemap: https://klinik.mavr-ai.com/sitemap.xml

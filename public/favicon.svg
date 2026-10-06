@@ -1,0 +1,7 @@
+<!-- favicon: sekmedeki küçük simge. SVG = çizim talimatı, her boyutta net görünür -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <!-- yuvarlak zemin (header rengi) -->
+  <circle cx="32" cy="32" r="32" fill="#a55709"/>
+  <!-- basit diş şekli -->
+  <path d="M20 18c-6 0-9 5-8 12 1 6 3 9 4 15 1 5 2 9 5 9 3 0 3-6 5-11 1-3 2-4 6-4s5 1 6 4c2 5 2 11 5 11 3 0 4-4 5-9 1-6 3-9 4-15 1-7-2-12-8-12-5 0-7 3-12 3s-7-3-12-3z" fill="#ffffff"/>
+</svg>

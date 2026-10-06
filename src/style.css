@@ -129,3 +129,12 @@ footer a {
 body {
   font-family: "Poppins", sans-serif;
 }
+
+/* "Eğitim amaçlı örnek site" uyarı şeridi (en üstte) */
+.uyari {
+  background-color: #fff3cd;   /* açık sarı: dikkat rengi */
+  color: #664d03;
+  text-align: center;
+  padding: 8px 16px;
+  font-size: 0.9rem;
+}
