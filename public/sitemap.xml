@@ -9,4 +9,9 @@
     <loc>https://klinik.mavr-ai.com/</loc>
     <lastmod>2026-10-07</lastmod>
   </url>
+  <!-- Aşama 6: yeni sayfa → ELLE ekledik (statik sitenin dezavantajı) -->
+  <url>
+    <loc>https://klinik.mavr-ai.com/cerez-politikasi.html</loc>
+    <lastmod>2026-10-07</lastmod>
+  </url>
 </urlset>

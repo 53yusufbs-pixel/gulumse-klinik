@@ -138,3 +138,53 @@ body {
   padding: 8px 16px;
   font-size: 0.9rem;
 }
+
+/* ===== Çerez onay kutusu (ekranın altına sabit) ===== */
+.cerez-kutusu {
+  position: fixed;             /* sayfa kaysa da yerinde durur */
+  left: 16px;
+  right: 16px;
+  bottom: 16px;
+  max-width: 640px;
+  margin: 0 auto;
+  background: #ffffff;
+  color: #333;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  padding: 16px 20px;
+  z-index: 1000;               /* her şeyin üstünde */
+}
+/* hidden özelliği varsa gerçekten gizle (display ayarımız onu ezmesin) */
+.cerez-kutusu[hidden] {
+  display: none;
+}
+.cerez-dugmeler {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+}
+/* İki düğme EŞİT büyüklükte ve görünürlükte (KVKK: reddetmek kabul etmek kadar kolay olmalı) */
+.cerez-dugmeler button {
+  flex: 1;
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 2px solid #1a7f9c;
+  cursor: pointer;
+  background: #ffffff;
+  color: #1a7f9c;
+}
+#cerez-kabul {
+  background: #1a7f9c;
+  color: #ffffff;
+}
+/* Footer'daki "Çerez tercihleri" düğmesi link gibi görünsün */
+.yasal-linkler button {
+  background: none;
+  border: none;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  font: inherit;
+  padding: 0;
+}

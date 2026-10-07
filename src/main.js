@@ -5,6 +5,8 @@
 // Burada ise Vite, build sırasında JSON'un içeriğini doğrudan JavaScript dosyasının içine gömecek.
 import saatler from "./saatler.json";
 import { saatMetni, acikMi } from "./saatler.js";
+// Çerez onayı + Analytics yükleme (Aşama 6)
+import "./cerez.js";
 
 const buton = document.getElementById("saat-butonu");
 const liste = document.getElementById("saat-listesi");
@@ -37,7 +39,8 @@ buton.addEventListener("click", function () {
 document.addEventListener("click", function (olay) {
   // Tıklanan öğe (veya içinde bulunduğu) bir <a> bağlantısı mı?
   const baglanti = olay.target.closest("a");
-  if (!baglanti || typeof gtag !== "function") return;
+  // Ziyaretçi çerezleri kabul etmediyse ölçme (window.analyticsAcik: src/cerez.js)
+  if (!baglanti || !window.analyticsAcik) return;
 
   const adres = baglanti.getAttribute("href") || "";
   if (adres.startsWith("tel:")) {

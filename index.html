@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <!-- ===== GOOGLE ANALYTICS 4 (Aşama 5) =====
-       Google'ın verdiği kod, <head>'in hemen başına. Her sayfada SADECE BİR KEZ olmalı.
-       1. satır: Google'ın ölçüm programını (gtag.js) indirir. async = sayfayı bekletmeden arka planda.
-       2. blok: gtag() adında bir "postacı" fonksiyon kurar; olaylar dataLayer kutusuna atılır,
-          gtag.js gelince hepsini Google'a gönderir.
-       G-B0J197TKK3 = Ölçüm Kimliği (gizli değil): "bu veriler hangi mülke gidecek".
-       NOT: Çerez onayı (KVKK) 6. aşamada eklenecek. -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B0J197TKK3"></script>
+  <!-- ===== GOOGLE ANALYTICS 4 + ÇEREZ ONAYI (Aşama 5-6) =====
+       DEĞİŞTİ: Google'ın programını (gtag.js) artık BURADA indirmiyoruz.
+       Burada sadece "postacı" fonksiyonu kuruyor ve Google'a başlangıç kuralını söylüyoruz:
+       "ziyaretçi izin verene kadar HER ŞEY REDDEDİLMİŞ say" (Google onay modu, consent mode).
+       gtag.js'yi ziyaretçi "Kabul ediyorum" derse src/cerez.js indirecek.
+       Reddederse Google'a HİÇBİR istek gitmez (= "temel onay modu"). -->
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-B0J197TKK3');
+    gtag('consent', 'default', {
+      analytics_storage: 'denied',   // ölçüm çerezleri (_ga): izin yok
+      ad_storage: 'denied',          // reklam çerezleri: izin yok (reklam vermiyoruz, hep kapalı)
+      ad_user_data: 'denied',
+      ad_personalization: 'denied'
+    });
   </script>
 
   <meta charset="UTF-8">
@@ -163,7 +165,27 @@
     <p>Adres: Hayali Sokak No:0, İstanbul</p>
     <p>Telefon: <a href="tel:+902120000000">0212 000 00 00</a></p>
     <p>E-posta: <a href="mailto:ornek@example.com">ornek@example.com</a></p>
+    <!-- KVKK: politika sayfası + ziyaretçinin kararını SONRADAN değiştirebilmesi (onayı geri alma hakkı) -->
+    <p class="yasal-linkler">
+      <a href="/cerez-politikasi.html">Çerez Politikası</a> ·
+      <button type="button" id="cerez-tercih">Çerez tercihleri</button>
+    </p>
   </footer>
+
+  <!-- ===== ÇEREZ ONAY KUTUSU =====
+       hidden: başta gizli. src/cerez.js, ziyaretçi daha önce karar VERMEDİYSE gösterir.
+       KVKK rehberine uygun: "Reddet" de "Kabul et" kadar görünür ve kolay. -->
+  <div id="cerez-kutusu" class="cerez-kutusu" role="dialog" aria-label="Çerez tercihi" hidden>
+    <p>
+      Sitemizi nasıl kullandığınızı anlamak için, <strong>izin verirseniz</strong>
+      Google Analytics çerezlerini kullanıyoruz. Ayrıntılar:
+      <a href="/cerez-politikasi.html">Çerez Politikası</a>.
+    </p>
+    <div class="cerez-dugmeler">
+      <button type="button" id="cerez-reddet">Reddet</button>
+      <button type="button" id="cerez-kabul">Kabul ediyorum</button>
+    </div>
+  </div>
 
   <!-- type="module": "bu dosya başka dosyaları içe aktarabilir (import)" demek.
        KAYNAK KODDA 3 ayrı dosya (main.js, saatler.js, saatler.json);
