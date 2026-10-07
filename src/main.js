@@ -29,3 +29,20 @@ buton.addEventListener("click", function () {
     ? "Çalışma saatlerini göster"
     : "Çalışma saatlerini gizle";
 });
+
+// ===== ANALYTICS: TELEFON VE E-POSTA TIKLAMALARI (Aşama 5) =====
+// Analytics sayfa görüntülemeyi kendisi ölçer, ama "telefona tıkladı" bilgisini bilmez.
+// Bu kod: sayfada herhangi bir yere tıklanınca, tıklanan şey tel: veya mailto: bağlantısıysa
+// Google'a bir OLAY (event) gönderir. Olay adları bizim seçtiğimiz isimler.
+document.addEventListener("click", function (olay) {
+  // Tıklanan öğe (veya içinde bulunduğu) bir <a> bağlantısı mı?
+  const baglanti = olay.target.closest("a");
+  if (!baglanti || typeof gtag !== "function") return;
+
+  const adres = baglanti.getAttribute("href") || "";
+  if (adres.startsWith("tel:")) {
+    gtag("event", "telefon_tiklama", { link_url: adres });
+  } else if (adres.startsWith("mailto:")) {
+    gtag("event", "eposta_tiklama", { link_url: adres });
+  }
+});

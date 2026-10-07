@@ -1,6 +1,21 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
+  <!-- ===== GOOGLE ANALYTICS 4 (Aşama 5) =====
+       Google'ın verdiği kod, <head>'in hemen başına. Her sayfada SADECE BİR KEZ olmalı.
+       1. satır: Google'ın ölçüm programını (gtag.js) indirir. async = sayfayı bekletmeden arka planda.
+       2. blok: gtag() adında bir "postacı" fonksiyon kurar; olaylar dataLayer kutusuna atılır,
+          gtag.js gelince hepsini Google'a gönderir.
+       G-B0J197TKK3 = Ölçüm Kimliği (gizli değil): "bu veriler hangi mülke gidecek".
+       NOT: Çerez onayı (KVKK) 6. aşamada eklenecek. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-B0J197TKK3"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-B0J197TKK3');
+  </script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
